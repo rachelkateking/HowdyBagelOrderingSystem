@@ -1,6 +1,7 @@
 from typing import List
 from menu import MENU, TOPPINGS
 
+TACOMA_SALES_TAX = 0.103
 def calculate_bagel_cost(items: List[str]) -> float:
     return sum(MENU[item] for item in items if item in MENU)
 
@@ -9,6 +10,7 @@ def calculate_topping_cost(items: List[str]) -> float:
 
 def calculate_total(bagels: List[str], toppings: List[str]) -> float:
     subtotal: float = calculate_bagel_cost(bagels) + calculate_topping_cost(toppings)
+    subtotal = subtotal * (1+TACOMA_SALES_TAX)
     return round(subtotal, 2)
 
 def print_receipt(bagels: List[str], toppings: List[str], total: float) -> None:
