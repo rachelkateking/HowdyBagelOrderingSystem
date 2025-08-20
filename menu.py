@@ -6,6 +6,7 @@ MENU: Dict[str, float] = {
     "everything": 3.00,
     "poppyseed": 2.50,
     "onion": 2.75,
+    "cinnamon_raison": 3.00,
 }
 
 TOPPINGS: Dict[str, float] = {
